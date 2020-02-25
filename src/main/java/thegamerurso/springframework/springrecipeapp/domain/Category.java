@@ -1,5 +1,6 @@
 package thegamerurso.springframework.springrecipeapp.domain;
 
+
 import javax.persistence.*;
 import java.util.Set;
 
