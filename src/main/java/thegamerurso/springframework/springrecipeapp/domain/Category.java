@@ -1,16 +1,16 @@
 package thegamerurso.springframework.springrecipeapp.domain;
 
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.util.Set;
 
+
 @Data
 @EqualsAndHashCode(exclude = {"recipes"})
 @Entity
-public class  Category {
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

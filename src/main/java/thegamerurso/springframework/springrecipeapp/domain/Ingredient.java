@@ -2,9 +2,13 @@ package thegamerurso.springframework.springrecipeapp.domain;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+@Getter
+@Setter
 @Data
 @EqualsAndHashCode(exclude = {"recipe"})
 @Entity
@@ -25,7 +29,7 @@ public class Ingredient {
     public Ingredient() {
     }
 
-    public  Ingredient(String description , BigDecimal amount, UnitOfMeasure uom){
+    public Ingredient(String description, BigDecimal amount, UnitOfMeasure uom) {
         this.description = description;
         this.amount = amount;
         this.uom = uom;
