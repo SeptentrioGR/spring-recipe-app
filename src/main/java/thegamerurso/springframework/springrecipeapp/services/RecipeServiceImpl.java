@@ -7,6 +7,7 @@ import thegamerurso.springframework.springrecipeapp.commands.RecipeCommand;
 import thegamerurso.springframework.springrecipeapp.converters.RecipeCommandToRecipe;
 import thegamerurso.springframework.springrecipeapp.converters.RecipeToRecipeCommand;
 import thegamerurso.springframework.springrecipeapp.domain.Recipe;
+import thegamerurso.springframework.springrecipeapp.exceptions.NotFoundException;
 import thegamerurso.springframework.springrecipeapp.repositories.RecipeRepository;
 
 import java.util.HashSet;
@@ -42,7 +43,7 @@ public class RecipeServiceImpl implements RecipeService {
         Optional<Recipe> recipeOptional = recipeRepository.findById(l);
 
         if (!recipeOptional.isPresent()) {
-            throw new RuntimeException("Recipe Not Found!");
+            throw new NotFoundException("Recipe Not Found. For ID value: " + l.toString() );
         }
 
         return recipeOptional.get();
